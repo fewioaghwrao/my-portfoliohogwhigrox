@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ポートフォリオ | C#</title>
+  <meta name="description" content="C# WPFポートフォリオ：センサー監視シミュレーションとExcel/帳票自動化ランチャーの紹介ページ。機能、技術、スクリーンショット、GitHub・デモ・ダウンロードリンク付き。"/>
+  <meta name="author" content="Your Name" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="ポートフォリオ | センサー監視 & 帳票ランチャー"/>
+  <meta property="og:description" content="C# WPFポートフォリオの2案件を個別紹介。機能・技術・リンクを一枚に整理。"/>
+  <meta property="og:image" content="images/ogp-placeholder.png"/>
+  <meta name="theme-color" content="#0ea5e9"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="robots" content="noindex,nofollow,noarchive,noimageindex" />
+  <meta name="googlebot" content="noindex,nofollow,noarchive,noimageindex" />
+  <meta name="referrer" content="no-referrer" />
+  <link rel="icon" href="../icon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    :root{
+      --bg:#fff; /* 背景 */
+      --panel:#fff; /* パネル */
+      --muted:black; /* サブテキスト */
+      --text: black; /* 文字 */
+      --brand:black; /* ブランド */
+      --accent:#22c55e; /* 成功/強調 */
+      --border:#1f2937; /* 枠線 */
+      --chip:#0ea5e9; /* バッジ色 */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:"Noto Sans JP",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      background:radial-gradient(1200px 500px at 10% -10%,#0b2b3f33,transparent),
+                 radial-gradient(1200px 500px at 100% 0%,#2a1a4b22,transparent),
+                 var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin-inline:auto;padding:24px}
+
+    /* ヘッダー */
+    .site-header{position:sticky;top:0;background:#fff;backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid var(--border);z-index:20}
+    .site-header__inner{display:flex;align-items:center;gap:20px;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;color:var(--text);font-weight:700;letter-spacing:.2px;font-size: 20px;}
+    .brand__logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--brand),#7c3aed)}
+    .nav{display:flex;gap:14px}
+    .nav a{padding:8px 10px;border-radius:12px}
+    .nav a:hover{background:#fff}
+    @media (max-width:900px){.brand a{font-size: 10px;}.nav a{font-size: 10px;}}
+
+    /* ヒーロー */
+    .hero{padding:38px 0 18px}
+    .hero__eyebrow{font-size:12px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+    .hero__title{font-size:clamp(22px,3.6vw,36px);font-weight:800;margin:10px 0 8px}
+    .hero__lead{color:black;margin:0}
+
+    /* グリッド */
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;}
+    .col-12{grid-column:span 12}
+    .col-6{grid-column:span 6}
+    @media (max-width:900px){.col-6{grid-column:span 12}}
+
+    /* カード */
+    .card{position:relative;background:lightseagreen;border:1px solid var(--border);border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .card__header{padding:18px 18px 0}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-size:12px;background:green;border:1px solid #0a3a55;color:white}
+    .badge svg{width:14px;height:14px}
+    .card__title{font-size:22px;margin:10px 0 6px}
+    .card__desc{color:black;margin:0 0 14px}
+    .media{position:relative;background:white;border-top:1px solid #0c1b2e;border-bottom:1px solid #0c1b2e}
+    .media img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;filter:saturate(105%)}
+    .media__caption{position:absolute;inset:auto 12px 12px 12px;background:linear-gradient(180deg,rgba(2,6,23,0.1),rgba(2,6,23,.7));padding:10px 12px;border:1px solid #0a1a2b;border-radius:12px;color:#cbd5e1;font-size:12px}
+    .card__body{padding:14px 18px 18px}
+
+    /* リスト */
+    .features{display:grid;grid-template-columns:repeat(12,1fr);gap:10px;margin:10px 0}
+    .features li{grid-column:span 6;list-style:none;padding-left:10px;border-left:2px solid #13314a;color:black}
+    @media (max-width:900px){.features li{grid-column:span 12}}
+
+    /* チップ */
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px}
+    .chip{font-size:12px;padding:6px 10px;border-radius:999px;background:#0ea5e9;border:1px solid #143247;color:#d2efff}
+
+    /* CTA */
+    .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid #103048;background:#071a2a;color:#e5f6ff;font-weight:600}
+    .btn.is-primary{background:linear-gradient(180deg,#0ea5e9,#0284c7);border-color:#046aa5}
+    .btn:hover{filter:brightness(1.05)}
+    .btn svg{width:16px;height:16px}
+
+    /* フッター */
+    footer{margin:36px 0 10px;color:var(--muted);text-align:center}
+    .sep{height:1px;background:linear-gradient(90deg,transparent,#1f2937,transparent);margin:26px 0}
+
+    /* アクセシビリティ */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  </style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="#top" aria-label="ホーム">
+        <span>My Portfolio</span>
+      </a>
+      <nav class="nav" aria-label="主要メニュー">
+        <a href="#sensor">センサー監視</a>
+        <a href="#report">帳票ランチャー</a>
+        <a href="#about">About</a>
+        <a href="../index.html">My Profileへ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="hero__eyebrow">C# / .NET 8 / WPF</p>
+      <h1 class="hero__title">ポートフォリオ 2案件を個別に紹介</h1>
+      <p class="hero__lead">現場業務の課題を意識したWindowsデスクトップアプリ。機能・使用技術・スクリーンショットを記載しております。</p>
+    </section>
+
+    <div class="grid">
+      <!-- センサー監視シミュレーション -->
+      <section id="sensor" class="col-6 card" aria-labelledby="sensorTitle">
+        <div class="card__header">
+          <span class="badge" aria-label="アプリ種別">
+            <!-- radar icon -->
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9" stroke="#7dd3fc" stroke-width="1.6"/><path d="M12 17a5 5 0 1 0-5-5" stroke="#7dd3fc" stroke-width="1.6"/><path d="M12 13a1 1 0 1 0-1-1" stroke="#7dd3fc" stroke-width="1.6"/></svg>
+            仮想センサー監視シミュレーション(設備ユーザー様向け想定)
+          </span>
+          <h2 id="sensorTitle" class="card__title">リアルタイム可視化 & アラート通知</h2>
+          <p class="card__desc">仮想センサーからのストリームを生成し、<strong>折れ線グラフ</strong>で可視化。しきい値超過で<strong>トースト通知・ログ出力</strong>、設定は<strong>JSONホットリロード</strong>対応。</p>
+        </div>
+        <div class="media">
+          <img src="images/C1.png" alt="センサー監視アプリのスクリーンショット（ダッシュボード、アラート、チャート）">
+        </div>
+        <div class="card__body">
+          <ul class="features">
+            <li>仮想センサー: ノイズ付きサイン波/ランダムウォーク</li>
+            <li>チャート: OxyPlot、履歴エクスポート（CSV）</li>
+            <li>アラート: しきい値/デッドバンド、概要説明(音声あり)、Serilog ログ</li>
+            <li>設定: <code>appsettings.json</code> ホットリロード、プロファイル切替</li>
+          </ul>
+          <div class="chips" aria-label="使用技術">
+            <span class="chip">.NET 8 WPF</span>
+            <span class="chip">CommunityToolkit.MVVM</span>
+            <span class="chip">OxyPlot</span>
+            <span class="chip">Serilog</span>
+            <span class="chip">JSON Config</span>
+          </div>
+          <div class="cta" aria-label="関連リンク">
+            <!-- ▼ ここをあなたのURLに置換してください -->
+            <a class="btn" href="https://github.com/fewioaghwrao/CsharpWpfTelemetryMonitor" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>
+            <a class="btn" href="docs/sensor-demo.html" target="_blank" rel="noopener">デモ</a>
+            <a class="btn" href="docs/sensor-readme.html" target="_blank" rel="noopener">Read me</a>
+            <a class="btn" href="https://github.com/fewioaghwrao/CsharpWpfTelemetryMonitor/releases/download/V1.0.0/SensorMonitor_v1.0.zip">ダウンロード(Windows用Zipファイル)</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Excel/帳票 自動化ランチャー -->
+      <section id="report" class="col-6 card" aria-labelledby="reportTitle">
+        <div class="card__header">
+          <span class="badge" aria-label="アプリ種別">
+            <!-- spreadsheet icon -->
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#a7f3d0" stroke-width="1.6"/><path d="M8 3v18M3 8h18M12 8v13M3 13h18" stroke="#a7f3d0" stroke-width="1.6"/></svg>
+            Excel/帳票 ランチャー（業務ユーザー様想定）
+          </span>
+          <h2 id="reportTitle" class="card__title">テンプレ×データで一括帳票出力</h2>
+          <p class="card__desc">JSONデータを読み込み、Excelテンプレ+<strong>ClosedXML</strong>や<strong>QuestPDF</strong>でレポートを一括生成。実行ジョブは<strong>ランチャーUI</strong>から選択。設定は<strong>JSONホットリロード</strong>対応。</p>
+        </div>
+        <div class="media">
+          <!-- TODO: スクショ画像を差し替え -->
+          <img src="images/report-placeholder.png" alt="帳票ランチャーのスクリーンショット（ジョブ一覧、出力ログ、生成PDFプレビュー）">
+        </div>
+        <div class="card__body">
+          <ul class="features">
+            <li>テンプレ: Excel (xlsx) と PDF (QuestPDF) の両対応</li>
+            <li>入出力: JSON 読み込み、出力先ディレクトリ自動採番</li>
+            <li>ログ: 実行履歴・エラー出力、リトライ／失敗ジョブのみ再実行</li>
+          </ul>
+          <div class="chips" aria-label="使用技術">
+            <span class="chip">.NET 8 WPF</span>
+            <span class="chip">CommunityToolkit.MVVM</span>
+            <span class="chip">ClosedXML</span>
+            <span class="chip">QuestPDF</span>
+            <span class="chip">Serilog</span>
+            <span class="chip">JSON Config</span>
+          </div>
+          <div class="cta" aria-label="関連リンク">
+            <!-- ▼ ここをあなたのURLに置換してください -->
+            <a class="btn" href="https://github.com/fewioaghwrao/WpfReportLauncher" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>
+            <a class="btn" href="docs/report-demo.html" target="_blank" rel="noopener">デモ</a>
+            <a class="btn" href="docs/report-readme.html" target="_blank" rel="noopener">Read me</a>
+            <a class="btn" href="https://github.com/fewioaghwrao/WpfReportLauncher/releases/download/V1.0.0/ReportLauncher_v1.0.zip">ダウンロード(Windows用Zipファイル)</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="sep" role="presentation" aria-hidden="true"></div>
+
+    <!-- About / 連絡先 -->
+    <section id="about" class="grid" aria-labelledby="aboutTitle">
+      <div class="col-12">
+        <h2 id="aboutTitle">About</h2>
+        <p>製造業の現場システムと連携するデスクトップアプリの開発・保守を中心に、7年以上の経験があります。PLC連携、TCP通信、WPFの業務アプリ開発に強み。現在はWeb技術（Java/Spring、React/TypeScript）にもキャッチアップ中です。</p>
+        <p>ご相談は<a href="mailto:no494259@oybusin.com">こちら(メールリンク)</a>まで。GitHubは<a href="https://github.com/fewioaghwrao" target="_blank" rel="noopener">こちら</a>。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> N.O. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // 年号を自動更新
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- 使い方メモ（公開時は削除OK）
+    1) 画像差し替え: images/sensor-placeholder.png, images/report-placeholder.png
+    2) 各ボタンのリンクを実URLに差し替え（GitHub/デモ/Docs/Zip）
+    3) OGP画像: images/ogp-placeholder.png を用意
+    4) フォルダ構成例:
+       /index.html（このファイル）
+       /images/{sensor-placeholder.png, report-placeholder.png, ogp-placeholder.png}
+       /docs/{sensor-readme.html, report-readme.html}
+       /releases/{sensor/SensorMonitor_v1.0.zip, report/ReportLauncher_v1.0.zip}
+    5) 複数ページ化したい場合:
+       - 本テンプレを複製して project-sensor.html と project-report.html を作成
+       - 本ページから <a href="#sensor">詳細ページへ</a> のリンクを追加
+  -->
+</body>
+</html>
