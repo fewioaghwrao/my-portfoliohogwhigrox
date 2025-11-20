@@ -207,6 +207,23 @@ a{ color: inherit; text-decoration: none; }
   height: auto;
 }
 
+/* PC幅以上のときだけ 2×2 レイアウトにする */
+@media (min-width: 960px) {
+  /* Skills セクション（4カード → 2列×2行） */
+  #services .grid.cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem; /* カード同士の余白。必要に応じて調整 */
+  }
+
+  /* Works セクション（4件 → 2列×2行） */
+  #works .grid.works {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
 /* Responsive */
 @media (max-width: 960px){
   .cards{ grid-template-columns: 1fr 1fr; }
