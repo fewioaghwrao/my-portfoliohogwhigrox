@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ポートフォリオ</title>
-  <meta name="description" content="Example Corp.は中小企業のDXを推進するWeb制作・システム開発会社です。">
+  <meta name="description" content="N.O.のポートフォリオ。C#（WPF/WinForms）実務7年超。Java/Spring Boot、ASP.NET Core、React/Next.jsの成果物を掲載。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
@@ -38,89 +38,139 @@
     </div>
   </header>
 
-  <section id="about">
-     <div class="container">
-      <header class="section__head reveal">
-        <h2 class="section__title">About</h2>
-      </header>
-    <div class="container hero__inner">
+<section id="about">
+  <div class="container">
+    <header class="section__head reveal">
+      <h2 class="section__title">About</h2>
+    </header>
+
+    <div class="hero__inner">
       <div class="hero__copy">
         <h2 class="hero__title reveal">N.O. <br class="only-sp"></h2>
-        <p class="hero__lead reveal reveal-delay-1">
- 7年超の C#（WPF/WinForms）実務。PLC連携やTCP通信、社内業務アプリなどの現場課題を一人で要件～運用まで一貫対応してきました。<br/>
-      現在は Web系（Java/Spring・PHP/Laravel・React/Next.js）へ領域拡張中。 C# 実績を基にした成果物の一部およびJava・PHP・Reactの成果物を共有します。
-          
-        </p>
+        <div class="hero__lead reveal reveal-delay-1">
+          <p>
+            7年超のC#（WPF / WinForms）実務経験を持ち、PLC連携・TCP通信を含む社内業務アプリ開発を
+            要件定義から設計・実装・運用まで一貫して担当してきました。
+          </p>
+
+          <p>
+            現在は業務アプリ開発の知見を活かし、
+            Java（Spring Boot）、C#（ASP.NET Core）、React / Next.js によるWebバックエンド/フロントエンド開発にも取り組んでいます。
+          </p>
+
+          <p>
+            本ポートフォリオでは、成果物を通じて「Web領域でも設計〜実装を自走できること」を示しています。
+          </p>
+
+          <ul class="hero__summary">
+            <li><strong>得意領域：</strong>業務アプリ（要件整理〜運用まで）</li>
+            <li><strong>強み：</strong>外部システム連携を前提にした堅牢な実装（例外処理・ログ・運用設計）</li>
+            <li><strong>現在：</strong>Spring / ASP.NET Core / Next.js でWeb領域を拡張</li>
+          </ul>
+        </div>
+
         <div class="hero__actions reveal reveal-delay-2">
           <a class="btn btn--ghost" href="#contact">Contact</a>
           <a class="btn btn--ghost" href="#works" aria-label="制作実績へ">Works</a>
         </div>
       </div>
+
       <figure class="hero__image reveal reveal-delay-3">
         <img src="images/hero1.png" alt="仮のプロフィール画像">
       </figure>
     </div>
-    </div>
-  </section>
+  </div>
+</section>
+
 
   <section id="services" class="section section--alt">
     <div class="container">
       <header class="section__head reveal">
         <h2 class="section__title">Skills(要約)</h2>
       </header>
-      <div class="grid cards">
-        <article class="card reveal">
-          <h3 class="card__title">C#(Windowsアプリ)</h3>
-            <p class="card__text">
-              実績を基にしたサンプルを個人開発。
-            </p>
-          <ul class="card__list">
-            <li>C# / .NET 8（WPF、WinForms）・MVVM・非同期・例外処理</li>
-            <li>帳票：ClosedXML、QuestPDF/グラフ：OxyPlot、LiveCharts/ログ：Serilog</li>
-            <li>通信：TCP/IP、PLC連携（プロトコル実務経験）</li>
-            <li>配布：GitHub Releases、README/ドキュメント整備</li>
-          </ul>
-        </article>
-<article class="card reveal reveal-delay-1">
-  <h3 class="card__title">Java(Spring boot)</h3>
+ <div class="grid cards">
+  <!-- C# Desktop -->
+<!-- C# Desktop / Web -->
+<article class="card reveal">
+  <h3 class="card__title">C#（Desktop / Web）</h3>
   <p class="card__text">
-    Java / Spring Boot を用いたスタジオ時間貸し予約アプリを個人開発。
+    実務の業務アプリ開発（WPF/WinForms）に加えて、ASP.NET Core による Web API / ダッシュボード開発も個人開発で拡張しています。
   </p>
+
   <ul class="card__list">
-    <li>Spring Boot 3 / Spring MVC / Spring Security / Spring Data JPA</li>
-    <li>Stripe・Mailgun 連携、三者ロール構成の業務ロジック実装</li>
-    <li>JUnit5・Mockito・MockMvc を用いた Web 層テスト/Heroku デプロイ</li>
+    <li><strong>実務：</strong>WPF / WinForms（要件整理〜運用まで一貫対応、PLC・TCP/IP連携）</li>
+    <li><strong>Web：</strong>ASP.NET Core（Minimal API）で請求書・入金管理ダッシュボード（Lite）を実装中</li>
+    <li><strong>技術：</strong>.NET / 認証・認可 / DTO設計 / 例外処理 / ログ / 非同期</li>
+    <li><strong>周辺：</strong>ClosedXML / QuestPDF / Serilog など</li>
   </ul>
+
+  <p class="card__links">
+    <!-- Desktop -->
+    <a href="CCharp/index.html">Detail（Desktop）</a>
+    <span class="sep">/</span>
+    <a href="https://github.com/fewioaghwrao/WpfReportLauncher" target="_blank" rel="noopener noreferrer nofollow">GitHub（Desktop）</a>
+
+    <span class="sep">/</span>
+
+    <!-- Web -->
+    <a href="invoice.html">Detail（Web）</a>
+    <span class="sep">/</span>
+    <a href="#" aria-label="C# Web GitHub link (coming soon)">GitHub（Web：準備中）</a>
+  </p>
+
+  <p class="note" style="margin-top:.5rem;">
+    ※「GitHub（Web）」は 2026/01/08 までに公開予定（限定公開想定）
+  </p>
 </article>
 
-<article class="card reveal reveal-delay-1">
-  <h3 class="card__title">PHP(Laravel)</h3>
-  <p class="card__text">
-    Laravel 製の給与明細管理アプリを個人開発。
-  </p>
-  <ul class="card__list">
-    <li>Laravel 12 / Eloquent ORM / 認証・認可（管理者・従業員ロール）</li>
-    <li>FormRequest バリデーションと Blade・Tailwind による画面実装</li>
-    <li>給与計算ロジック、PDF 出力（Dompdf）、PHPUnit によるテスト</li>
-  </ul>
-</article>
-        <article class="card reveal reveal-delay-2">
-          <h3 class="card__title">HTML / CSS / JavaScript（React / Next.js）</h3>
-          <p class="card__text">
-            Next.js・TypeScript を用いた天気ダッシュボードアプリを個人開発。
-            フロント〜API層まで一通り実装しています。
-          </p>
-          <ul class="card__list">
-            <li>Next.js 14（App Router）／React／TypeScript</li>
-            <li>Tailwind CSS によるレスポンシブデザイン</li>
-            <li>Route Handlers 経由での OpenWeatherMap API 連携</li>
-            <li>Prisma + MySQL（JawsDB）によるデータ永続化</li>
-            <li>会員登録・ログイン・パスワードリセット等の認証フロー実装</li>
-            <li>Heroku へのデプロイ／環境変数管理（.env.local, Config Vars）</li>
-          </ul>
-        </article>
 
-      </div>
+  <!-- Java Spring Boot -->
+  <article class="card reveal reveal-delay-1">
+    <h3 class="card__title">Java（Spring Boot）</h3>
+    <p class="card__text">
+      スタジオ時間貸し予約アプリを個人開発（業務アプリを想定したロール/決済/通知を含む）。
+    </p>
+
+    <ul class="card__list">
+      <li><strong>担当：</strong>要件整理 / DB設計 / API・画面実装 / デプロイ</li>
+      <li><strong>技術：</strong>Spring Boot 3 / MVC / Security / Data JPA</li>
+      <li><strong>外部連携：</strong>Stripe、Mailgun（メール）</li>
+      <li><strong>品質：</strong>JUnit5 / Mockito / MockMvc（Web層テスト）</li>
+    </ul>
+
+    <p class="card__links">
+      <a href="studiobook.html">Detail</a>
+      <span class="sep">/</span>
+      <a href="https://github.com/fewioaghwrao/studio_book" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>
+      <span class="sep">/</span>
+      <a href="https://studio-book-naoki2025-d9e2f98301ba.herokuapp.com/" target="_blank" rel="noopener noreferrer nofollow">Demo</a>
+    </p>
+  </article>
+
+  <!-- Next.js -->
+  <article class="card reveal reveal-delay-2">
+    <h3 class="card__title">React / Next.js（Web）</h3>
+    <p class="card__text">
+      天気ダッシュボードを個人開発。フロント〜API層まで一通り実装し、認証フローや永続化も含めています。
+    </p>
+
+    <ul class="card__list">
+      <li><strong>担当：</strong>画面設計 / API設計 / 実装 / デプロイ</li>
+      <li><strong>技術：</strong>Next.js（App Router）/ React / TypeScript / Tailwind</li>
+      <li><strong>外部連携：</strong>OpenWeatherMap API（Route Handlers 経由）</li>
+      <li><strong>DB：</strong>Prisma + MySQL（JawsDB）</li>
+      <li><strong>認証：</strong>会員登録 / ログイン / パスワードリセット</li>
+    </ul>
+
+    <p class="card__links">
+      <a href="weatherdashboard.html">Detail</a>
+      <span class="sep">/</span>
+      <a href="https://github.com/fewioaghwrao/Weather_Dashboard" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>
+      <span class="sep">/</span>
+      <a href="https://weather-dashboard-naoki2025-b551ca7a0859.herokuapp.com/auth/login" target="_blank" rel="noopener noreferrer nofollow">Demo</a>
+    </p>
+  </article>
+</div>
     </div>
   </section>
 
@@ -130,13 +180,6 @@
         <h2 class="section__title">Works</h2>
       </header>
       <div class="grid works">
-        <a class="work reveal" href="CCharp/index.html" aria-label="実績A 詳細">
-          <img src="images/C1.png" alt="実績A">
-          <div class="work__meta">
-            <span class="work__tag">実績を基にしたサンプル</span>
-            <h3 class="work__title">C#(WPF)</h3>
-          </div>
-        </a>
         <a class="work reveal reveal-delay-1" href="studiobook.html" aria-label="実績B 詳細">
           <img src="images/studio-book-top.png" alt="実績B">
           <div class="work__meta">
@@ -144,18 +187,26 @@
             <h3 class="work__title">Java(Spring boot)</h3>
           </div>
         </a>
-        <a class="work reveal reveal-delay-2" href="payroll.html" aria-label="実績C 詳細">
-          <img src="images/payroll-top.png" alt="実績C">
-          <div class="work__meta">
-            <span class="work__tag">給与明細アプリ</span>
-            <h3 class="work__title">PHP(Laravel)</h3>
-          </div>
-        </a>
         <a class="work reveal reveal-delay-2" href="weatherdashboard.html" aria-label="実績C 詳細">
           <img src="images/weather-dashboard-main.png" alt="実績C">
           <div class="work__meta">
             <span class="work__tag">天気ダッシュボード</span>
             <h3 class="work__title">React(Next.js)</h3>
+          </div>
+        </a>
+        <a class="work reveal reveal-delay-2" href="invoice.html" aria-label="実績C 詳細">
+          <img src="images/comingsoon.png" alt="実績C">
+          <div class="work__meta">
+            <span class="work__tag">請求書・入金ステータスダッシュボード</span>
+            <h3 class="work__title">C#（ASP.NET Core）</h3>
+          </div>
+        </a>
+ 
+        <a class="work reveal" href="CCharp/index.html" aria-label="実績A 詳細">
+          <img src="images/C1.png" alt="実績A">
+          <div class="work__meta">
+            <span class="work__tag">過去の実績を基にしたサンプル</span>
+            <h3 class="work__title">C#(WPF)</h3>
           </div>
         </a>
       </div>
