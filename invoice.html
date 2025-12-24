@@ -358,6 +358,39 @@
       </div>
     </section>
 
+<!-- 学び・今後の改善予定 -->
+<section class="section">
+  <div class="container">
+    <header class="section__head reveal">
+      <h2 class="section__title">学び・今後の改善予定</h2>
+    </header>
+
+    <div class="reveal">
+      <h3 class="h3">学び</h3>
+      <ul class="list">
+        <li>業務ドメイン（請求・入金・一部入金）の状態遷移を、データ構造と画面導線に落とし込む設計</li>
+        <li>フロント（Next.js）↔ バック（ASP.NET Core）を REST API + JWT で疎結合にし、役割分担できる構成</li>
+        <li>集計（売上/未入金/回収率）を「一覧・検索」と同じUXで扱うための API 設計（条件・ページング・サマリー）</li>
+        <li>“動くデモ”として成立させるためのダミーデータ設計と公開時の安全設計（権限/入力/ログ）</li>
+      </ul>
+
+      <h3 class="h3 mt-3">今後の改善予定</h3>
+      <ul class="list">
+        <li>テスト導入：重要ロジック（ステータス判定・入金割当・集計）から単体テストを段階的に追加</li>
+        <li>運用強化：監査ログ（重要操作）／エラーハンドリングの統一／ログの相関ID付与</li>
+        <li>業務拡張：月次締め（締め後の更新制御）／催促テンプレの管理（文面・差分履歴）</li>
+        <li>パフォーマンス：一覧の検索最適化（index設計）／集計のキャッシュ・非同期化（必要時）</li>
+      </ul>
+
+      <p class="note mt-2">
+        ※ Lite 版では「実務で重要度が高いコア機能（請求・入金・集計）」を優先し、
+        運用系（締め/監査/テスト拡充）は改善項目として段階的に追加する方針です。
+      </p>
+    </div>
+  </div>
+</section>
+
+
     <!-- Links -->
     <section id="links" class="section section--alt">
       <div class="container">
