@@ -89,40 +89,31 @@
         <h2 class="section__title">Skills(要約)</h2>
       </header>
  <div class="grid cards">
-  <!-- C# Desktop -->
-<!-- C# Desktop / Web -->
 <article class="card reveal">
-  <h3 class="card__title">C#（Desktop / Web）</h3>
+  <h3 class="card__title">C#（Web / ASP.NET Core）</h3>
   <p class="card__text">
-    実務の業務アプリ開発（WPF/WinForms）に加えて、ASP.NET Core による Web API / ダッシュボード開発も個人開発で拡張しています。
+    業務アプリを想定した請求書・入金管理ダッシュボードを個人開発。
+    管理者/会員の権限分離、一覧・検索・更新を中心に Web バックエンド設計〜実装を行っています。
   </p>
 
   <ul class="card__list">
-    <li><strong>実務：</strong>WPF / WinForms（要件整理〜運用まで一貫対応、PLC・TCP/IP連携）</li>
-    <li><strong>Web：</strong>ASP.NET Core（Minimal API）で請求書・入金管理ダッシュボード（Lite）を実装中</li>
-    <li><strong>技術：</strong>.NET / 認証・認可 / DTO設計 / 例外処理 / ログ / 非同期</li>
-    <li><strong>周辺：</strong>ClosedXML / QuestPDF / Serilog など</li>
+    <li><strong>Backend：</strong>ASP.NET Core（.NET 8 / Minimal API）</li>
+    <li><strong>設計：</strong>DTO設計 / 認証・認可（JWT）/ 例外処理</li>
+    <li><strong>業務：</strong>請求・入金・一部入金・売上集計</li>
+    <li><strong>周辺：</strong>EF Core / CSV出力 / ログ（Serilog）</li>
   </ul>
 
   <p class="card__links">
-    <!-- Desktop -->
-    <a href="CCharp/index.html">Detail（Desktop）</a>
+    <a href="invoice.html">Detail</a>
     <span class="sep">/</span>
-    <a href="https://github.com/fewioaghwrao/WpfReportLauncher" target="_blank" rel="noopener noreferrer nofollow">GitHub（Desktop）</a>
-
-    <span class="sep">/</span>
-
-    <!-- Web -->
-    <a href="invoice.html">Detail（Web）</a>
-    <span class="sep">/</span>
-    <a href="#" aria-label="C# Web GitHub link (coming soon)">GitHub（Web：準備中）</a>
+    <a href="https://invoice-naoki-app-front-b97fea6c721d.herokuapp.com/auth/login"
+       target="_blank" rel="noopener noreferrer nofollow">Demo</a>
   </p>
 
   <p class="note" style="margin-top:.5rem;">
-    ※「GitHub（Web）」は 2026/01/08 までに公開予定（限定公開想定）
+    ※GitHub は 2026/01/08 までに公開予定（限定公開想定）
   </p>
 </article>
-
 
   <!-- Java Spring Boot -->
   <article class="card reveal reveal-delay-1">
@@ -170,6 +161,29 @@
       <a href="https://weather-dashboard-naoki2025-b551ca7a0859.herokuapp.com/auth/login" target="_blank" rel="noopener noreferrer nofollow">Demo</a>
     </p>
   </article>
+
+  <article class="card reveal reveal-delay-3">
+  <h3 class="card__title">C#（Desktop / WPF・WinForms）</h3>
+  <p class="card__text">
+    社内向け業務アプリを中心に、7年以上の C# 実務経験。
+    要件整理から設計・実装・運用まで一貫して担当してきました。
+  </p>
+
+  <ul class="card__list">
+    <li><strong>実務：</strong>WPF / WinForms</li>
+    <li><strong>連携：</strong>PLC・ロボット・TCP/IP 通信</li>
+    <li><strong>帳票：</strong>Excel / PDF 出力（ClosedXML / QuestPDF）</li>
+    <li><strong>役割：</strong>要件整理 / 保守 / 改修 / 運用</li>
+  </ul>
+
+  <p class="card__links">
+    <a href="CCharp/index.html">Detail</a>
+    <span class="sep">/</span>
+    <a href="https://github.com/fewioaghwrao/WpfReportLauncher"
+       target="_blank" rel="noopener noreferrer nofollow">GitHub</a>
+  </p>
+</article>
+
 </div>
     </div>
   </section>
@@ -180,35 +194,42 @@
         <h2 class="section__title">Works</h2>
       </header>
       <div class="grid works">
-        <a class="work reveal reveal-delay-1" href="studiobook.html" aria-label="実績B 詳細">
-          <img src="images/studio-book-top.png" alt="実績B">
-          <div class="work__meta">
-            <span class="work__tag">スタジオ時間貸し予約アプリ</span>
-            <h3 class="work__title">Java(Spring boot)</h3>
-          </div>
-        </a>
-        <a class="work reveal reveal-delay-2" href="weatherdashboard.html" aria-label="実績C 詳細">
-          <img src="images/weather-dashboard-main.png" alt="実績C">
-          <div class="work__meta">
-            <span class="work__tag">天気ダッシュボード</span>
-            <h3 class="work__title">React(Next.js)</h3>
-          </div>
-        </a>
-        <a class="work reveal reveal-delay-2" href="invoice.html" aria-label="実績C 詳細">
-          <img src="images/comingsoon.png" alt="実績C">
-          <div class="work__meta">
-            <span class="work__tag">請求書・入金ステータスダッシュボード</span>
-            <h3 class="work__title">C#（ASP.NET Core）</h3>
-          </div>
-        </a>
- 
-        <a class="work reveal" href="CCharp/index.html" aria-label="実績A 詳細">
-          <img src="images/C1.png" alt="実績A">
-          <div class="work__meta">
-            <span class="work__tag">過去の実績を基にしたサンプル</span>
-            <h3 class="work__title">C#(WPF)</h3>
-          </div>
-        </a>
+<!-- ① Invoice -->
+<a class="work reveal reveal-delay-1" href="invoice.html" aria-label="請求書・入金ステータスダッシュボード 詳細">
+  <img src="images/invoice-top.png" alt="請求書・入金ステータスダッシュボード（Lite）">
+  <div class="work__meta">
+    <span class="work__tag">請求書・入金ステータスダッシュボード</span>
+    <h3 class="work__title">C#（ASP.NET Core / Next.js）</h3>
+  </div>
+</a>
+
+<!-- ② Studio Book -->
+<a class="work reveal reveal-delay-2" href="studiobook.html" aria-label="スタジオ時間貸し予約アプリ 詳細">
+  <img src="images/studio-book-top.png" alt="スタジオ時間貸し予約アプリ">
+  <div class="work__meta">
+    <span class="work__tag">スタジオ時間貸し予約アプリ</span>
+    <h3 class="work__title">Java（Spring Boot）</h3>
+  </div>
+</a>
+
+<!-- ③ Weather Dashboard -->
+<a class="work reveal reveal-delay-3" href="weatherdashboard.html" aria-label="天気ダッシュボード 詳細">
+  <img src="images/weather-dashboard-main.png" alt="天気ダッシュボード">
+  <div class="work__meta">
+    <span class="work__tag">天気ダッシュボード</span>
+    <h3 class="work__title">React（Next.js）</h3>
+  </div>
+</a>
+
+<!-- ④ WPF -->
+<a class="work reveal" href="CCharp/index.html" aria-label="C# WPF 実績サンプル 詳細">
+  <img src="images/C1.png" alt="C# WPF 実績サンプル">
+  <div class="work__meta">
+    <span class="work__tag">過去の実績を基にしたサンプル</span>
+    <h3 class="work__title">C#（WPF）</h3>
+  </div>
+</a>
+
       </div>
     </div>
   </section>
