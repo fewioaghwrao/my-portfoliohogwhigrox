@@ -298,3 +298,163 @@ a{ color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce){
   .reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
 }
+
+/* === About 整形（段落 + 3行サマリー） === */
+.hero__lead p{
+  margin: 0 0 12px;
+  line-height: 1.8;
+}
+
+.hero__summary{
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.04);
+  list-style: none;
+}
+
+.hero__summary li{
+  margin: 6px 0;
+}
+
+/* === Skills: Links（カード末尾のリンク） === */
+.card__links{
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.card__links a{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.card__links .sep{
+  opacity: .5;
+  margin: 0 6px;
+}
+
+/* === invoice.html: API table / links / note === */
+.api-table-wrap{
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+.api-table{
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+}
+
+.api-table th,
+.api-table td{
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  text-align: left;
+  vertical-align: top;
+}
+
+.api-table th{
+  font-weight: 700;
+  background: rgba(0,0,0,0.04);
+}
+
+.link-list{
+  padding-left: 18px;
+  line-height: 1.9;
+}
+
+.note{
+  margin-top: 10px;
+  opacity: .8;
+  font-size: .95em;
+}
+.work-detail__lead {
+  line-height: 1.8;
+  margin: 0 0 12px;
+}
+
+.work-detail__meta {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.8;
+}
+
+.api-table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+.api-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+  background: #fff;
+}
+
+.api-table th,
+.api-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  text-align: left;
+  vertical-align: top;
+}
+
+.api-table th {
+  font-weight: 700;
+  background: rgba(0,0,0,0.04);
+}
+
+.link-list {
+  padding-left: 18px;
+  line-height: 1.9;
+}
+
+.note {
+  margin-top: 10px;
+  opacity: 0.8;
+  font-size: 0.95em;
+}
+.card__links {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.card__links a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.card__links .sep {
+  opacity: 0.5;
+  margin: 0 6px;
+}
+/* --- API table: border fix (GitHub Pagesで線が出ない対策) --- */
+.api-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid rgba(0,0,0,.12);
+}
+
+.api-table th,
+.api-table td {
+  border: 1px solid rgba(0,0,0,.12);
+  padding: 12px 10px;
+  vertical-align: top;
+}
+
+.api-table thead th {
+  background: rgba(0,0,0,.04);
+}
+
+
+.api-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.api-table {
+  min-width: 720px; /* 列が潰れない最低幅 */
+}
