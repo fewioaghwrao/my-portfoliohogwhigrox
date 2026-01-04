@@ -73,11 +73,14 @@
           ※デモデータはダミーです。
         </p>
 
-        <p class="hero__note reveal reveal-delay-3">
-          <strong>デモアカウント：</strong>
-          管理者：admin@example.com / Admin1234!　
-          会員：member@example.com / Member1234!
-        </p>
+<div class="hero__note reveal reveal-delay-3">
+  <p><strong>デモアカウント：</strong></p>
+  <ul class="list">
+    <li><strong>管理者</strong>：admin@example.com / Admin1234!</li>
+    <li><strong>会員</strong>：member@example.com / Member1234!</li>
+  </ul>
+</div>
+
       </div>
 
       <figure class="hero__image reveal reveal-delay-3">
@@ -115,7 +118,7 @@
         </div>
         <div class="summary-list__row">
           <dt>使用技術</dt>
-          <dd>ASP.NET Core（Minimal API）/ Next.js / TypeScript / Tailwind / MySQL（本番想定）</dd>
+          <dd>ASP.NET Core / Next.js / TypeScript / Tailwind / PostgreSQL（Heroku Postgres）</dd>
         </div>
         <div class="summary-list__row">
           <dt>URL</dt>
@@ -165,9 +168,10 @@ GitHub：
   <li>請求書：一覧/検索/詳細/作成/更新</li>
   <li>請求明細（InvoiceLines）：追加/更新/削除</li>
   <li>入金：一覧/検索/詳細/登録</li>
-  <li>ステータス（未払い/一部/完了 等）管理</li>
+  <li>ステータス（未入金／一部入金／入金済み）の自動判定</li>
   <li>催促（リマインド）：送信履歴管理</li>
   <li>売上集計：月次 / 顧客別 / ステータス別</li>
+  <li>請求書PDF出力（管理者/会員）※QuestPDF + 日本語フォント埋め込み</li>
 </ul>
 
             <p class="card__text">

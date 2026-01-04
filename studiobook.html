@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>スタジオ時間貸し予約アプリ（Studio Book）｜ポートフォリオ</title>
-  <meta name="description" content="スタジオの検索〜予約〜決済までをブラウザ上で完結できる時間貸し予約Webアプリケーション「Studio Book」の制作実績ページです。Java / Spring Boot を用いて個人開発しました。">
+  <meta name="description" content="3ロール（一般/ホスト/管理者）の権限分離、予約×状態遷移、Stripe Webhook による決済確定まで実装した時間貸し予約Webアプリ（Java / Spring Boot）。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="ポートフォリオ トップへ">
-        <img src="images/logox.svg" alt="コーディアワークス ロゴ" class="brand__logo-img" width="160" height="48" />
+        <img src="images/logox.svg" alt="N.O. Portfolio ロゴ" class="brand__logo-img" width="160" height="48" />
       </a>
       <nav class="nav" aria-label="グローバルナビゲーション">
         <button class="nav__toggle" aria-expanded="false" aria-controls="navList">MENU</button>
@@ -76,7 +76,7 @@
               また、スタジオは架空のものとなっております。
             </p>
             <p class="hero__note reveal reveal-delay-3">
-              ※決済は Stripe のテストモードです（実課金は発生しません）
+              ※決済は Stripe の Test Mode を使用しており、実際の請求は発生しません
             </p>
           </div>
 
@@ -98,7 +98,7 @@
           <dl class="summary-list">
             <div class="summary-list__row">
               <dt>開発期間</dt>
-              <dd>約1ヶ月（業務アプリを想定し、設計〜実装〜デプロイまで個人で一貫対応）</dd>
+              <dd>約1ヶ月（設計〜実装〜デプロイまで個人で一貫対応。業務要件を優先し、機能を絞って完成度を重視）</dd>
             </div>
             <div class="summary-list__row">
               <dt>開発人数</dt>
@@ -166,7 +166,7 @@
             <ul class="card__list">
               <li>MySQL / MariaDB</li>
               <li>Heroku（アプリケーションデプロイ）</li>
-              <li>Mailgun（メール送信：本番想定／開発ではSMTP or ダミー設定で検証）</li>
+              <li>Mailgun（本番想定）／開発環境ではログ出力で検証</li>
               <li>JUnit5 / Mockito / MockMvc（Web層テスト）</li>
               <li>Git / GitHub（ソースコード管理）</li>
             </ul>
@@ -295,7 +295,16 @@
         <div class="grid grid--2col">
           <div class="reveal">
             <h3 class="h3">レイヤードアーキテクチャ</h3>
-            <p>
+<p class="mt-2">
+  詳細な設計方針は
+  <a href="https://github.com/fewioaghwrao/studio_book/blob/main/docs/ARCHITECTURE.md"
+     target="_blank"
+     rel="noopener noreferrer nofollow">
+    docs/ARCHITECTURE.md
+  </a>
+  にまとめています。
+</p>
+
               Controller / Service / Repository / Entity からなる
               <strong>レイヤードアーキテクチャ</strong> で構成しています。
             </p>
